@@ -1,0 +1,66 @@
+Web applications are inevitable nowadays
+
+### History
+
+Earlier, applications were monoliths (single code responsible for running the application)
+
+THe problems with it are:
+
+The whole code gets bigger and bigger
+There is no separation of concerns.
+Not an easy task to fix any issues
+
+## New way
+
+Nowadays, the web applications are divided into different tiers/layers
+We call these as stacks (fullstack- all stacks)
+
+The commonly used architecture is MVC architecture where the applications are divided into layers
+They are: Model, view, controller
+
+All view related code is called frontend or UI
+All the server related code comes under controller
+All the databases comes under model layer
+
+
+#### Technologies
+
+frontend or UI - Javascript, html, css, php, etc;
+backend or server: Java, python, Nodejs, .Net, etc;
+database : MySQL, MongoDB, etc;
+
+With this approach, each team is having its own responsibility and the technologies can be independent.
+The frontend can be implemented in any language and backend can be implemented in any language
+
+The frontend connects to the backend via HTTP/HTTPS protocols.
+The server is hosted at an address and listens via a port and end point. We call this API end point.
+The UI makes a request to the API and the server responds with a response.
+The UI then, processes the data and displays on UI.
+
+Lets take an example of IRCTC.
+
+The IRCTC server sends data via API calls.
+
+The UI can be anything like IRCTC app, paytm, phonepe, makemytrip and many more.
+
+
+
+
+########## Evolution of JS and importance of it
+
+Way back the websites used to be static with HOME, ABOUT and CONTACT pages. There was very less interaction.
+
+With the web2.0, websites needed interaction from users and this led to popularity of JAVASCRIPT.
+Javascript was named after popular language JAVA at that point of time just to gain popularity and there is no connection to JAVA
+
+Javascript is officially called ECMAScript
+
+ECMA is the organization/association which publishes new features of the language
+
+Javascript is commonly called as js.
+
+JS is run in a browser. Each browser has a compiler to run JS code and we call them JS engines.
+
+JS is a client side language since it is run on client machine.
+
+Frameworks and libraries of Javascript like Angular and React are to make developer's job easier (Noodles example)
