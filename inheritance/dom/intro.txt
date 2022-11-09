@@ -1,0 +1,31 @@
+The topic  - DOM
+
+DOM - Document Object Model
+
+
+Soemthing that is of this format is form of representation called XML
+
+XML - extensible markup language
+HTML - Hyper text markup language
+
+<piyush></piyush>
+
+
+html 
+|     \
+head   body
+       / | \
+    h1  div button
+
+
+There is a similar tree for CSS and it is CSSOM
+
+******** The terminologies
+
+window - window is what is visible to the user // browser window or tab
+window is a object  JS uses it for interacting with the browser or the window itself
+
+navigator - it shows the state of the web page
+
+Document - It represents the content present on the page - The HTML
+

@@ -1,0 +1,77 @@
+<!-- Topic is about DOM  -->
+<!-- The document gets converted into an object structure -->
+
+<html>
+<head>
+    <title>DOM Manipulation</title>
+    <!-- <script src="../constructor-prototypes.js"></script> -->
+</head>
+<body>
+    <!-- <div></div> -->
+    <ul id = "ulElement">
+        <li class ="listItem">First element</li>
+        <li class ="listItem">Second element</li>
+        <li class ="listItem">Third element</li>
+    </ul>
+
+    <div id = "simpleDiv" demo-attribute="hello"></div>
+
+<script>
+    // console.log(document);
+    // console.log(document.head);
+    // console.log(document.body);
+
+    // children
+    // console.log(document.body.childNodes); // we dont use it most cases
+    // console.log(document.body.children);
+
+    // for(node of document.body.children) 
+    // {
+    //     console.log(node);
+    // }
+    // console.log(Array.from(document.body.children));
+
+
+    // siblings
+    // const ulTag = document.body.children[0];
+    // const firstLi = ulTag.children[0];
+    // console.log(firstLi);
+    // const secondLi = ulTag.children[1];
+    // // secondLi.previousElementSibling.textContent = "changed here"
+    // console.log(secondLi.previousElementSibling.textContent);
+    // console.log(secondLi.nextElementSibling.textContent);
+
+    // IDs
+
+    const ulElement = document.getElementById('ulElement');
+    // console.log(ulElement);
+    ulElement.style.backgroundColor = "green";
+
+    //class
+    // console.log(document.getElementsByClassName('listItem'));
+    
+    //queryselector
+
+    // console.log(document.querySelector('li'))
+    console.log(document.querySelectorAll('li'))
+
+    console.log(document.getElementById('afterScript'));
+
+    //attributes
+
+    console.log(document.getElementById('simpleDiv').getAttribute('demo-attribute'));
+    console.log(document.getElementById('simpleDiv').setAttribute('second-attribute', 'world'));
+
+
+</script>
+
+<ul id = "afterScript">
+    <li>After script</li>
+</ul>
+
+</body>
+</html>
+
+
+
+
