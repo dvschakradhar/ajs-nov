@@ -14,7 +14,9 @@
         <li class ="listItem">Third element</li>
     </ul>
 
-    <div id = "simpleDiv" demo-attribute="hello"></div>
+    <div id = "simpleDiv" in-stock="true">Product 1</div>
+
+    <button id="addCart" onclick="console.log('you clicked me')">Add to cart</button>
 
 <script>
     // console.log(document);
@@ -59,8 +61,54 @@
 
     //attributes
 
-    console.log(document.getElementById('simpleDiv').getAttribute('demo-attribute'));
-    console.log(document.getElementById('simpleDiv').setAttribute('second-attribute', 'world'));
+    console.log(document.getElementById('simpleDiv').getAttribute('in-stock'));
+    // Lets say there is some logic here
+    // after that I want to update the quantity
+    // The logic gave me a value of 0 and I need to set an attribute with that
+    console.log(document.getElementById('simpleDiv').setAttribute('stock-quantity', 0));
+
+    if(document.getElementById('simpleDiv').getAttribute('stock-quantity') == 0)
+    {
+        console.log(document.getElementById('simpleDiv').setAttribute('in-stock', false));
+    }
+
+    console.log(document.getElementById('simpleDiv').getAttribute('in-stock'));
+    if(document.getElementById('simpleDiv').getAttribute('in-stock') === "false"){
+        document.getElementById('simpleDiv').style.backgroundColor = "red";
+    }
+
+    //Create elements
+
+    // const noStockEle = document.createElement('span');
+    // noStockEle.innerText = " (Out of stock)";
+
+    const noStockEle = document.createElement('span');
+    noStockEle.innerHTML = `<b>(Out of stock)</b>`;
+
+
+    // document.getElementById('simpleDiv').append(noStockEle);
+    document.getElementById('simpleDiv').prepend(noStockEle);
+
+    const newDiv = document.createElement('div');
+    newDiv.innerText = "This is to be a new div"
+
+    document.getElementById('simpleDiv').after(newDiv);
+    // document.getElementById('simpleDiv').before(newDiv);
+
+    //Events
+
+    const cartButton = document.getElementById('addCart');
+    // console.log(cartButton);
+
+    // EVENT LISTENERS
+    //addEventListener(event, function)
+    // function is the callback function- means- whenever the event happens
+    // call this function
+
+    cartButton.addEventListener('click', function() {
+        console.log("Item added to cart");
+    })
+
 
 
 </script>
