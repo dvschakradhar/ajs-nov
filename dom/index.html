@@ -6,7 +6,7 @@
     <title>DOM Manipulation</title>
     <!-- <script src="../constructor-prototypes.js"></script> -->
 </head>
-<body>
+<body id = "myBody">
     <!-- <div></div> -->
     <ul id = "ulElement">
         <li class ="listItem">First element</li>
@@ -16,7 +16,7 @@
 
     <div id = "simpleDiv" in-stock="true">Product 1</div>
 
-    <button id="addCart" onclick="console.log('you clicked me')">Add to cart</button>
+    <button id="addCart">Add to cart</button>
 
 <script>
     // console.log(document);
@@ -105,8 +105,21 @@
     // function is the callback function- means- whenever the event happens
     // call this function
 
-    cartButton.addEventListener('click', function() {
+    function clickListener(event) {
+        console.log(event);
+
+        console.log(event.clientX);
+        console.log(event.target);
+        event.target.innerText = "Added to cart!"
+        event.target.setAttribute('disabled', true);
         console.log("Item added to cart");
+    }
+
+    cartButton.addEventListener('click', clickListener);
+    document.getElementById('simpleDiv').addEventListener('mouseover', function(event) {
+        console.log("mouseover");
+        event.target.style.color = 'white';
+
     })
 
 
