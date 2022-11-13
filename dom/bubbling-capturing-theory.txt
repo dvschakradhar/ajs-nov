@@ -1,0 +1,29 @@
+In general, when an event occurs on  an  element, the corresponding event listener will respond.
+
+This happens because of event propogation.
+
+There are different phases of how this event propogation happens
+
+1. Event capturing
+2. Event
+3. Event bubbling
+
+
+Event capturing is top down
+It is proposed by Netscape
+
+Event bubbling is the concept of the event bubbling from the target or innermost to 
+parents
+
+Event bubbling is prpoposed by Microsoft
+
+These are the 2 different schools of thought.
+
+w3c - (world web consortium) came saying we will support both. THe developers can choose at which phase 
+they want to listen to the event.
+
+They said Event bubbling is the default behavior
+
+addEventListener('click', callback function, true of false)
+by default the 3rd inoput is false for event bubbling
+true is for event capturing

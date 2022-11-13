@@ -1,0 +1,87 @@
+<!-- Event bubbling and event capturing -->
+<html>
+<head>
+    <style>
+        div {
+            padding: 20px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id = "grandParent">
+        This is the grand parent div
+        <div id = "parent">
+            This is the parent div
+            <div id = "child">
+                This is child div or inner most div
+            </div>
+        </div>
+    </div>
+    <script>
+
+        // Event bubbing
+
+        // document.getElementById('child').addEventListener('click', function(event){
+        //     console.log("clicked on child");
+        // }, false); //event bubbling
+
+        // document.getElementById('parent').addEventListener('click', function(event){
+        //     console.log("clicked on parent");
+        // }, false); //event bubbling
+
+        // document.getElementById('grandParent').addEventListener('click', function(event){
+        //     console.log("clicked on grandParent");
+        // }, false); //event bubbling
+
+
+        // Event capturing
+
+        // document.getElementById('child').addEventListener('click', function(event){
+        //     console.log("clicked on child");
+        // }, true); //event capturing
+
+        // document.getElementById('parent').addEventListener('click', function(event){
+        //     console.log("clicked on parent");
+        // }, true); //event capturing
+
+        // document.getElementById('grandParent').addEventListener('click', function(event){
+        //     console.log("clicked on grandParent");
+        // }, true); //event capturing
+
+        //play zone for us
+
+        // document.getElementById('child').addEventListener('click', function(event){
+        //     console.log("clicked on child");
+        // }, false); //event bubbling
+
+        // document.getElementById('parent').addEventListener('click', function(event){
+        //     console.log("clicked on parent");
+        // }, true); //event capturing
+
+        // document.getElementById('grandParent').addEventListener('click', function(event){
+        //     console.log("clicked on grandParent");
+        // }, false); //event bubbling
+
+        /* If we wish the parents to NOT respond to the event even if they have
+         event listeners, then we need to stop the propogation */
+
+         document.getElementById('child').addEventListener('click', function(event){
+            console.log("clicked on child");
+            event.stopPropagation();
+        }); //event bubbling
+
+        // If you want to stop all other event listeners on the target itself, use event.stopImmediatePropogation
+
+        document.getElementById('parent').addEventListener('click', function(event){
+            console.log("clicked on parent");
+        }); //event bubbling
+
+        document.getElementById('grandParent').addEventListener('click', function(event){
+            console.log("clicked on grandParent");
+        }); //event bubbling
+
+
+    </script>
+</body>
+</html>
