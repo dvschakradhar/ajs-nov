@@ -1,0 +1,106 @@
+<html>
+    <head>
+
+    <style>
+        #items-table {
+            margin-top:20px;
+        }
+        table, th, td {
+            padding:5px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    </head>
+    <body>
+        <label for="">Name</label>
+        <input id = "item-name-input" type="text">
+        <label for="">Price</label>
+        <input id = "item-price-input" type="number" min="0" required>
+        <button id = "btn"></button>
+
+        <table id = "items-table" style="border:1px solid black">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Item Price</th>
+                </tr>
+            </thead>
+            <tbody id = "table-body">
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Grand Total</td>
+                    <td id ="total" data-ns-test="grandTotal">0</td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+        <script>
+        const btnEle = document.getElementById('btn');
+        btnEle.innerText = "Add";
+
+        btnEle.addEventListener('click', function(event) {
+            // Get values of the 2 inputs;
+            let name = document.getElementById('item-name-input').value;
+            let price = document.getElementById('item-price-input').value;
+
+            if(price > 0) {
+
+                // Add the values to the table (point 3)
+
+                //If we want to handle click on each row,
+                // 1 way is to add event listener on each row you put
+                //Another way is to add event listener to the parent
+
+                //option 1
+                // let id = Math.random();
+                // document.getElementById('table-body').innerHTML+= `<tr id = ${id}>
+                //     <td data-ns-test="item-name">${name}</td>
+                //     <td data-ns-test="item-price">${price}</td>
+                //     </tr>`;
+
+                // document.getElementById(id).addEventListener('click', function(event) {
+                //     event.target.style.backgroundColor = "Green";
+                // })
+
+                //option 2
+
+                document.getElementById('table-body').innerHTML+= `<tr>
+                    <td data-ns-test="item-name">${name}</td>
+                    <td data-ns-test="item-price">${price}</td>
+                    </tr>`;
+                
+                document.getElementById('table-body').addEventListener('click', function(event) {
+                    console.log("The listener is on::::",event.currentTarget);
+                    console.log("The click was on:::::",event.target);
+                    event.target.style.backgroundColor = "Green";
+                })
+
+
+
+                
+                // Update grand total
+                let total = parseInt(document.getElementById('total').innerText);
+                total+=parseInt(price);
+                document.getElementById('total').innerHTML = total;
+                
+                // clear inputs
+    
+                document.getElementById('item-name-input').value = "";
+                document.getElementById('item-price-input').value = "";
+            }
+            else {
+                alert("Please provide valid inputs");
+                console.log("Please provide valid inputs");
+            }
+
+        })
+
+
+        </script>
+
+    </body>
+</html>

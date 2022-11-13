@@ -1,0 +1,16 @@
+JS Operators(All),
+ES6 Classes
+The this Keyword
+Getters & Setters
+
+JS Operators
+addition 
+multiplication
+division
+
+
+ES6- stands for ECMAScript 6 or Javascript version (latest and widely used)
+ES6 classes
+getters and setters
+
+THIS keyword
