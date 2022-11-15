@@ -1,0 +1,9 @@
+Topics:
+
+Static Methods,
+Scoping & Scope chaining
+Hoisting
+Closures
+Typed Coercion
+Private Members
+Inheritance
