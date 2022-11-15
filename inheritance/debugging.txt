@@ -1,0 +1,80 @@
+diff b/w prototype chain and prototype inheritance?
+There u gave only _proto_ here prototype what is difference?
+diff b/w prototype chain , inheritance and constructor prototype?
+sir objects are also supported inside the object?? like methods?
+sir can we write any functionality with protype?
+so in js everything is an object we can call any object using a method in another obj?!
+prototype inheritance and constructor prototype are a little bit confusing.. What is the difference?
+what should we use, "extends" or __proto__?
+how to identify function and constructor function??
+
+
+
+1 
+let arr = [];
+arr -> Array ->  object -> null
+
+
+// class style
+class parent {
+
+}
+
+class child extends parent {
+
+}
+
+child.__proto__ = parent //
+
+function a () {
+
+}
+
+class Car {
+    constructor(color) {
+        if(color)
+        {
+            this.color = color;//"white";  // this keyword refers to the object 
+        }
+        else {
+            this.color = "white";
+        }
+    }
+}
+
+let fortuner1 = new Car();
+let fortuner2 = new Car("red");
+let fortuner3 = new Car("black");
+let fortuner4 = new Car("grey");
+
+
+function A() {
+
+}
+
+A.prototype.applyPaint = function(color) {
+    this.color = color;
+}
+
+let obj = {
+    name: "Indranil",
+    address: {
+        street: "abc",
+        city: "Hyderabad",
+        country: "India"
+    },
+    getName: function() {
+        console.log(this.name);
+    }
+}
+
+obj.name
+obj.address.street
+obj.address.city
+obj.getName()
+
+Object.__proto__.customMethod = function() {
+    console.log("custom method added");
+} 
+
+
