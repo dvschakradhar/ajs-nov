@@ -8,6 +8,7 @@ class Car {
         this.color = color ? color : 'white';
         this.fuelType = fuelType ? fuelType : 'petrol';
         this.length = '1500mm';
+        // console.log(this) // amitCar
     }
 
     get getFuelType() {
@@ -44,6 +45,9 @@ class HybridCar extends Car {
 }
 
 let seltos = new Car();
+
+let amitCar = new Car();
+let rahulCar = new Car();
 
 // console.log(seltos.startEngine());
 let fuel = seltos.getFuelType;
