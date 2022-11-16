@@ -1,0 +1,18 @@
+innerText vs innterHTML
+this
+scopes
+closure
+hoisting
+iterations
+inheritance - window and prototype
+symbol
+event vs target
+
+getter setter
+
+callback of addEventListener
+
+
+in case of page refresh - localstorage
+
+try catch
