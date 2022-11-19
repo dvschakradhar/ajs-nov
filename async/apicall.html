@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h1>The XMLHttpRequest Object</h1>
+<button type="button" onclick="loadUserDataFromAPI()">Load user data</button>
+</div>
+
+<script>
+    
+function loadUserDataFromAPI() {
+  fetch('https://reqres.in/api/users').then((response)=> {
+    console.log(response);
+    return response.json();
+  }).then((actualResponse) => {
+    console.log(actualResponse);
+    document.getElementById("demo").innerHTML = actualResponse;
+  }).catch((error) => {
+    console.log(error);
+  })
+}
+
+function add(a, b) {
+  console.log(a +b);
+}
+add(5,6);
+</script>
+
+</body>
+</html>

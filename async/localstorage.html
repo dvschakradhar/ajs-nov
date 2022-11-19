@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<body onload="getFromLocalStorage()">
+<div id="demo" >
+<h1>Localstorage demo</h1>
+<input id = "userName" type="text">
+<button type="button" onclick="greetUser()">Load user data</button>
+<div id = "greeting"></div>
+</div>
+
+<script>
+ function greetUser(){
+    let userName = document.getElementById('userName').value;
+    localStorage.setItem('user', userName);
+    document.getElementById('greeting').innerHTML = `Hello ${userName}`;
+ }
+
+ function getFromLocalStorage() {
+    document.getElementById('greeting').innerHTML = `Hello ${localStorage.getItem('user')}`;
+ }
+</script>
+
+</body>
+</html>

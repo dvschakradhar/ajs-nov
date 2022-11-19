@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h1>The XMLHttpRequest Object</h1>
+<button type="button" onclick="loadUserDataFromAPI()">Load user data</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+ async function loadUserDataFromAPI() {
+  try {
+    let response = await fetch('https://reqres.in/api/users');
+    let userData = response.data.data
+    console.log(userData);
+    let myElement = '';
+    for(user of userData) {
+        myElement +=  `<div><img src = "${user.avatar}"/></div>
+        <div><label>The user name is </label>${user.first_name}</div>
+        <div><label>The user last name is </label>${user.last_name}</div>
+        <div><label>The user email is </label>${user.email}</div>`;
+    }
+    document.getElementById("demo").innerHTML  = myElement;
+  }
+  catch(err){
+    //handle error
+    console.log("Error occured");
+  }
+  
+}
+
+function add(a, b) {
+  console.log(a +b);
+}
+add(5,6);
+</script>
+
+</body>
+</html>
