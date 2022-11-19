@@ -1,0 +1,48 @@
+Today's topic
+
+
+setTimeOut
+setTimeInterval
+
+
+JSON
+Promises
+Promise.all
+async await,axios
+,fetch
+Ajax,
+POSTMAN Intro
+
+
+
+
+
+
+API - is the end point or server
+
+you are hitting a server
+
+to
+
+1. Fetch data  - GET call
+2. update data - PUT call
+3. create data - POST call
+4. delete data - DELETE call
+
+The UI and backend communicate with each other according a set of standards/contract
+
+The UI can request the server to send data in JSON format
+
+what is JSON?
+
+Javascript Object Notation
+
+let jsonData = {
+    "name": "Ram",
+}
+
+normal object
+
+let obj = {
+    name: "Ram"
+}

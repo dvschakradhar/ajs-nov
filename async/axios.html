@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h1>The XMLHttpRequest Object</h1>
+<button type="button" onclick="loadUserDataFromAPI()">Load user data</button>
+</div>
+<!-- importing axios library -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    
+function loadUserDataFromAPI() {
+  let userData;
+  axios.get('https://reqres.in/api/users').then((response)=> {
+    console.log("response is::::: ", response);
+    userData = response.data.data;
+
+    console.log("user data is::::::", userData);
+
+    let myElement = '';
+
+    for(user of userData) {
+        myElement +=  `<div><img src = "${user.avatar}"/></div>
+        <div><label>The user name is </label>${user.first_name}</div>
+        <div><label>The user last name is </label>${user.last_name}</div>
+        <div><label>The user email is </label>${user.email}</div>`;
+    }
+
+    // userData is array of all the user objects
+
+    document.getElementById("demo").innerHTML  = myElement;
+  }).catch((error) => {
+    console.log(error);
+  })
+}
+
+function add(a, b) {
+  console.log(a +b);
+}
+add(5,6);
+</script>
+
+</body>
+</html>
